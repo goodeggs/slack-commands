@@ -4,6 +4,5 @@ name: slack-commands
 processes:
   web:
     command: node index.js
-    instances: 2
+    count: 2
     memory: 50
-
