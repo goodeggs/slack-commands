@@ -1,6 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
+var request = require('request-promise');
+
 var app = express();
 
 app.use(morgan('combined'));
@@ -15,10 +17,41 @@ app.post("/", function(req, res, next) {
       var url = "https://calendar.google.com/calendar/embed?mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=" + user + "%40goodeggs.com&amp;color=%2329527A&amp;ctz=America%2FLos_Angeles"
       res.status(200).send("Click to open <" + url + "|@" + user + "'s calendar>");
       break;
+
+      case "/helpscout":
+        var conversation = req.body.text.split(" ")
+        var mailbox = conversation[0];
+        conversation.pop(0);
+        var customer = conversation[0];
+        var subject = conversation.pop(0).toString(",").replace(",", " ");
+
+        if (mailbox === "it") {
+          mailbox = 19176;
+        } else if (mailbox === "devops" {
+          mailbox = 98082;
+        })
+        request.post("https://api.helpscout.net/v1/conversations.json", {
+          auth: {
+            user: process.env.HELPSCOUT,
+            password: "x"
+          },
+          body: subject,
+        })
+        .then(function(res) {
+          res.status(200).send("Converstation created.")
+        })
+      break;
+
     default:
       next();
   }
 });
+ "/helpscout devops andre@goodeggs.com can't deploy it-accounts-api"
+
+app.post("/create_ticket", function(req, res, next) {
+
+
+})
 
 app.use(function(req, res, next) {
   res.status(404).send("command not found");
