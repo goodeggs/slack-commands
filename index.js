@@ -18,40 +18,61 @@ app.post("/", function(req, res, next) {
       res.status(200).send("Click to open <" + url + "|@" + user + "'s calendar>");
       break;
 
-      case "/helpscout":
-        var conversation = req.body.text.split(" ")
-        var mailbox = conversation[0];
-        conversation.pop(0);
-        var customer = conversation[0];
-        var subject = conversation.pop(0).toString(",").replace(",", " ");
+    case "/helpscout":
+      var newConvo = req.body.text.split(" ");
+      var mailbox = newConvo[0];
+      newConvo.pop(0);
+      var customer = newConvo[0];
+      var subject = newConvo.pop(0).toString(",").replace(",", " ");
 
-        if (mailbox === "it") {
-          mailbox = 19176;
-        } else if (mailbox === "devops" {
-          mailbox = 98082;
-        })
-        request.post("https://api.helpscout.net/v1/conversations.json", {
-          auth: {
-            user: process.env.HELPSCOUT,
-            password: "x"
-          },
-          body: {
-            conversation: {
-              customer: customer,
-              subject: subject,
-              mailbox: mailbox,
-              thread: {
-                type: req.body.user_name,
-                createdBy: req.body.user_name,
-                body: subject
-              }
-            }
-          },
-          json: true,
-        })
-        .then(function(res) {
-          res.status(200).send("Converstation created.")
-        })
+      if (mailbox === "it") {
+        mailbox = 19176;
+      } else {
+        mailbox = 98082;
+      }
+      var conversation = {
+        "type": "email",
+        "customer": {
+          "email": "andre@goodeggs.com",
+          "firstName": "Andre",
+          "lastName": "Customer",
+          "type": "customer"
+        },
+        "subject": "Help!",
+        "mailbox": {
+          "id": mailbox
+        },
+        "tags": [
+          "slack"
+        ],
+        "threads": [
+          {
+            "type": "customer",
+            "createdBy": {
+              "email": "andre@goodeggs.com",
+              "firstName": "Andre",
+              "lastName": "Williams",
+              "type": "customer"
+            },
+            "body": subject
+          }
+        ]
+      }
+      res.send("starting");
+      request.post("https://api.helpscout.net/v1/conversations.json", {
+        auth: {
+          user: process.env.HELPSCOUT,
+          password: "x"
+        },
+        body: conversation,
+        json: true,
+      })
+      .then(function(response) {
+        response.status(200).send("Converstation created." + " " + res);
+      })
+      .catch(function(err) {
+        response.send(err);
+      })
       break;
 
     default:

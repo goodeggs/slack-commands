@@ -1,4 +1,4 @@
-env_id: 58e6d3eb6caec000156af445
+env_id: 58e6d8af6caec000156af448
 
 name: slack-commands
 
@@ -6,4 +6,4 @@ processes:
   web:
     command: node index.js
     count: 2
-    memory: 50
+    memory: 256

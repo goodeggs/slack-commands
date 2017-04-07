@@ -1,0 +1,546 @@
+{
+  "name": "slack-commands",
+  "version": "1.0.0",
+  "dependencies": {
+    "accepts": {
+      "version": "1.3.3",
+      "from": "accepts@>=1.3.3 <1.4.0",
+      "resolved": "https://npm.goodeggs.com/accepts/-/accepts-1.3.3.tgz"
+    },
+    "ajv": {
+      "version": "4.11.5",
+      "from": "ajv@>=4.9.1 <5.0.0",
+      "resolved": "https://npm.goodeggs.com/ajv/-/ajv-4.11.5.tgz"
+    },
+    "array-flatten": {
+      "version": "1.1.1",
+      "from": "array-flatten@1.1.1",
+      "resolved": "https://npm.goodeggs.com/array-flatten/-/array-flatten-1.1.1.tgz"
+    },
+    "asn1": {
+      "version": "0.2.3",
+      "from": "asn1@>=0.2.3 <0.3.0",
+      "resolved": "https://npm.goodeggs.com/asn1/-/asn1-0.2.3.tgz"
+    },
+    "assert-plus": {
+      "version": "0.2.0",
+      "from": "assert-plus@>=0.2.0 <0.3.0",
+      "resolved": "https://npm.goodeggs.com/assert-plus/-/assert-plus-0.2.0.tgz"
+    },
+    "asynckit": {
+      "version": "0.4.0",
+      "from": "asynckit@>=0.4.0 <0.5.0",
+      "resolved": "https://npm.goodeggs.com/asynckit/-/asynckit-0.4.0.tgz"
+    },
+    "aws-sign2": {
+      "version": "0.6.0",
+      "from": "aws-sign2@>=0.6.0 <0.7.0",
+      "resolved": "https://npm.goodeggs.com/aws-sign2/-/aws-sign2-0.6.0.tgz"
+    },
+    "aws4": {
+      "version": "1.6.0",
+      "from": "aws4@>=1.2.1 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/aws4/-/aws4-1.6.0.tgz"
+    },
+    "basic-auth": {
+      "version": "1.1.0",
+      "from": "basic-auth@>=1.1.0 <1.2.0",
+      "resolved": "https://npm.goodeggs.com/basic-auth/-/basic-auth-1.1.0.tgz"
+    },
+    "bcrypt-pbkdf": {
+      "version": "1.0.1",
+      "from": "bcrypt-pbkdf@>=1.0.0 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz"
+    },
+    "bluebird": {
+      "version": "3.5.0",
+      "from": "bluebird@>=3.5.0 <4.0.0",
+      "resolved": "https://npm.goodeggs.com/bluebird/-/bluebird-3.5.0.tgz"
+    },
+    "body-parser": {
+      "version": "1.17.1",
+      "from": "body-parser@>=1.15.1 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/body-parser/-/body-parser-1.17.1.tgz"
+    },
+    "boom": {
+      "version": "2.10.1",
+      "from": "boom@>=2.0.0 <3.0.0",
+      "resolved": "https://npm.goodeggs.com/boom/-/boom-2.10.1.tgz"
+    },
+    "bytes": {
+      "version": "2.4.0",
+      "from": "bytes@2.4.0",
+      "resolved": "https://npm.goodeggs.com/bytes/-/bytes-2.4.0.tgz"
+    },
+    "caseless": {
+      "version": "0.12.0",
+      "from": "caseless@>=0.12.0 <0.13.0",
+      "resolved": "https://npm.goodeggs.com/caseless/-/caseless-0.12.0.tgz"
+    },
+    "co": {
+      "version": "4.6.0",
+      "from": "co@>=4.6.0 <5.0.0",
+      "resolved": "https://npm.goodeggs.com/co/-/co-4.6.0.tgz"
+    },
+    "combined-stream": {
+      "version": "1.0.5",
+      "from": "combined-stream@>=1.0.5 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/combined-stream/-/combined-stream-1.0.5.tgz"
+    },
+    "content-disposition": {
+      "version": "0.5.2",
+      "from": "content-disposition@0.5.2",
+      "resolved": "https://npm.goodeggs.com/content-disposition/-/content-disposition-0.5.2.tgz"
+    },
+    "content-type": {
+      "version": "1.0.2",
+      "from": "content-type@>=1.0.2 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/content-type/-/content-type-1.0.2.tgz"
+    },
+    "cookie": {
+      "version": "0.3.1",
+      "from": "cookie@0.3.1",
+      "resolved": "https://npm.goodeggs.com/cookie/-/cookie-0.3.1.tgz"
+    },
+    "cookie-signature": {
+      "version": "1.0.6",
+      "from": "cookie-signature@1.0.6",
+      "resolved": "https://npm.goodeggs.com/cookie-signature/-/cookie-signature-1.0.6.tgz"
+    },
+    "cryptiles": {
+      "version": "2.0.5",
+      "from": "cryptiles@>=2.0.0 <3.0.0",
+      "resolved": "https://npm.goodeggs.com/cryptiles/-/cryptiles-2.0.5.tgz"
+    },
+    "dashdash": {
+      "version": "1.14.1",
+      "from": "dashdash@>=1.12.0 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/dashdash/-/dashdash-1.14.1.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://npm.goodeggs.com/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "debug": {
+      "version": "2.6.1",
+      "from": "debug@2.6.1",
+      "resolved": "https://npm.goodeggs.com/debug/-/debug-2.6.1.tgz"
+    },
+    "delayed-stream": {
+      "version": "1.0.0",
+      "from": "delayed-stream@>=1.0.0 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/delayed-stream/-/delayed-stream-1.0.0.tgz"
+    },
+    "depd": {
+      "version": "1.1.0",
+      "from": "depd@>=1.1.0 <1.2.0",
+      "resolved": "https://registry.npmjs.org/depd/-/depd-1.1.0.tgz"
+    },
+    "destroy": {
+      "version": "1.0.4",
+      "from": "destroy@>=1.0.4 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/destroy/-/destroy-1.0.4.tgz"
+    },
+    "ecc-jsbn": {
+      "version": "0.1.1",
+      "from": "ecc-jsbn@>=0.1.1 <0.2.0",
+      "resolved": "https://npm.goodeggs.com/ecc-jsbn/-/ecc-jsbn-0.1.1.tgz"
+    },
+    "ee-first": {
+      "version": "1.1.1",
+      "from": "ee-first@1.1.1",
+      "resolved": "https://npm.goodeggs.com/ee-first/-/ee-first-1.1.1.tgz"
+    },
+    "encodeurl": {
+      "version": "1.0.1",
+      "from": "encodeurl@>=1.0.1 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/encodeurl/-/encodeurl-1.0.1.tgz"
+    },
+    "escape-html": {
+      "version": "1.0.3",
+      "from": "escape-html@>=1.0.3 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/escape-html/-/escape-html-1.0.3.tgz"
+    },
+    "etag": {
+      "version": "1.8.0",
+      "from": "etag@>=1.8.0 <1.9.0",
+      "resolved": "https://npm.goodeggs.com/etag/-/etag-1.8.0.tgz"
+    },
+    "express": {
+      "version": "4.15.2",
+      "from": "express@>=4.13.4 <5.0.0",
+      "resolved": "https://npm.goodeggs.com/express/-/express-4.15.2.tgz"
+    },
+    "extend": {
+      "version": "3.0.0",
+      "from": "extend@>=3.0.0 <3.1.0",
+      "resolved": "https://npm.goodeggs.com/extend/-/extend-3.0.0.tgz"
+    },
+    "extsprintf": {
+      "version": "1.0.2",
+      "from": "extsprintf@1.0.2",
+      "resolved": "https://npm.goodeggs.com/extsprintf/-/extsprintf-1.0.2.tgz"
+    },
+    "finalhandler": {
+      "version": "1.0.1",
+      "from": "finalhandler@>=1.0.0 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/finalhandler/-/finalhandler-1.0.1.tgz",
+      "dependencies": {
+        "debug": {
+          "version": "2.6.3",
+          "from": "debug@2.6.3",
+          "resolved": "https://npm.goodeggs.com/debug/-/debug-2.6.3.tgz"
+        }
+      }
+    },
+    "forever-agent": {
+      "version": "0.6.1",
+      "from": "forever-agent@>=0.6.1 <0.7.0",
+      "resolved": "https://npm.goodeggs.com/forever-agent/-/forever-agent-0.6.1.tgz"
+    },
+    "form-data": {
+      "version": "2.1.2",
+      "from": "form-data@>=2.1.1 <2.2.0",
+      "resolved": "https://npm.goodeggs.com/form-data/-/form-data-2.1.2.tgz"
+    },
+    "forwarded": {
+      "version": "0.1.0",
+      "from": "forwarded@>=0.1.0 <0.2.0",
+      "resolved": "https://npm.goodeggs.com/forwarded/-/forwarded-0.1.0.tgz"
+    },
+    "fresh": {
+      "version": "0.5.0",
+      "from": "fresh@0.5.0",
+      "resolved": "https://npm.goodeggs.com/fresh/-/fresh-0.5.0.tgz"
+    },
+    "getpass": {
+      "version": "0.1.6",
+      "from": "getpass@>=0.1.1 <0.2.0",
+      "resolved": "https://npm.goodeggs.com/getpass/-/getpass-0.1.6.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://npm.goodeggs.com/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "har-schema": {
+      "version": "1.0.5",
+      "from": "har-schema@>=1.0.5 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/har-schema/-/har-schema-1.0.5.tgz"
+    },
+    "har-validator": {
+      "version": "4.2.1",
+      "from": "har-validator@>=4.2.1 <4.3.0",
+      "resolved": "https://npm.goodeggs.com/har-validator/-/har-validator-4.2.1.tgz"
+    },
+    "hawk": {
+      "version": "3.1.3",
+      "from": "hawk@>=3.1.3 <3.2.0",
+      "resolved": "https://npm.goodeggs.com/hawk/-/hawk-3.1.3.tgz"
+    },
+    "hoek": {
+      "version": "2.16.3",
+      "from": "hoek@>=2.0.0 <3.0.0",
+      "resolved": "https://npm.goodeggs.com/hoek/-/hoek-2.16.3.tgz"
+    },
+    "http-errors": {
+      "version": "1.6.1",
+      "from": "http-errors@>=1.6.1 <1.7.0",
+      "resolved": "https://npm.goodeggs.com/http-errors/-/http-errors-1.6.1.tgz"
+    },
+    "http-signature": {
+      "version": "1.1.1",
+      "from": "http-signature@>=1.1.0 <1.2.0",
+      "resolved": "https://npm.goodeggs.com/http-signature/-/http-signature-1.1.1.tgz"
+    },
+    "iconv-lite": {
+      "version": "0.4.15",
+      "from": "iconv-lite@0.4.15",
+      "resolved": "https://npm.goodeggs.com/iconv-lite/-/iconv-lite-0.4.15.tgz"
+    },
+    "inherits": {
+      "version": "2.0.3",
+      "from": "inherits@2.0.3",
+      "resolved": "https://npm.goodeggs.com/inherits/-/inherits-2.0.3.tgz"
+    },
+    "ipaddr.js": {
+      "version": "1.3.0",
+      "from": "ipaddr.js@1.3.0",
+      "resolved": "https://npm.goodeggs.com/ipaddr.js/-/ipaddr.js-1.3.0.tgz"
+    },
+    "is-typedarray": {
+      "version": "1.0.0",
+      "from": "is-typedarray@>=1.0.0 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/is-typedarray/-/is-typedarray-1.0.0.tgz"
+    },
+    "isstream": {
+      "version": "0.1.2",
+      "from": "isstream@>=0.1.2 <0.2.0",
+      "resolved": "https://npm.goodeggs.com/isstream/-/isstream-0.1.2.tgz"
+    },
+    "jodid25519": {
+      "version": "1.0.2",
+      "from": "jodid25519@>=1.0.0 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/jodid25519/-/jodid25519-1.0.2.tgz"
+    },
+    "jsbn": {
+      "version": "0.1.1",
+      "from": "jsbn@>=0.1.0 <0.2.0",
+      "resolved": "https://npm.goodeggs.com/jsbn/-/jsbn-0.1.1.tgz"
+    },
+    "json-schema": {
+      "version": "0.2.3",
+      "from": "json-schema@0.2.3",
+      "resolved": "https://npm.goodeggs.com/json-schema/-/json-schema-0.2.3.tgz"
+    },
+    "json-stable-stringify": {
+      "version": "1.0.1",
+      "from": "json-stable-stringify@>=1.0.1 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/json-stable-stringify/-/json-stable-stringify-1.0.1.tgz"
+    },
+    "json-stringify-safe": {
+      "version": "5.0.1",
+      "from": "json-stringify-safe@>=5.0.1 <5.1.0",
+      "resolved": "https://npm.goodeggs.com/json-stringify-safe/-/json-stringify-safe-5.0.1.tgz"
+    },
+    "jsonify": {
+      "version": "0.0.0",
+      "from": "jsonify@>=0.0.0 <0.1.0",
+      "resolved": "https://npm.goodeggs.com/jsonify/-/jsonify-0.0.0.tgz"
+    },
+    "jsprim": {
+      "version": "1.4.0",
+      "from": "jsprim@>=1.2.2 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/jsprim/-/jsprim-1.4.0.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@1.0.0",
+          "resolved": "https://npm.goodeggs.com/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "lodash": {
+      "version": "4.17.4",
+      "from": "lodash@>=4.13.1 <5.0.0",
+      "resolved": "https://npm.goodeggs.com/lodash/-/lodash-4.17.4.tgz"
+    },
+    "media-typer": {
+      "version": "0.3.0",
+      "from": "media-typer@0.3.0",
+      "resolved": "https://npm.goodeggs.com/media-typer/-/media-typer-0.3.0.tgz"
+    },
+    "merge-descriptors": {
+      "version": "1.0.1",
+      "from": "merge-descriptors@1.0.1",
+      "resolved": "https://npm.goodeggs.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz"
+    },
+    "methods": {
+      "version": "1.1.2",
+      "from": "methods@>=1.1.2 <1.2.0",
+      "resolved": "https://npm.goodeggs.com/methods/-/methods-1.1.2.tgz"
+    },
+    "mime": {
+      "version": "1.3.4",
+      "from": "mime@1.3.4",
+      "resolved": "https://npm.goodeggs.com/mime/-/mime-1.3.4.tgz"
+    },
+    "mime-db": {
+      "version": "1.27.0",
+      "from": "mime-db@>=1.27.0 <1.28.0",
+      "resolved": "https://npm.goodeggs.com/mime-db/-/mime-db-1.27.0.tgz"
+    },
+    "mime-types": {
+      "version": "2.1.15",
+      "from": "mime-types@>=2.1.15 <2.2.0",
+      "resolved": "https://npm.goodeggs.com/mime-types/-/mime-types-2.1.15.tgz"
+    },
+    "morgan": {
+      "version": "1.8.1",
+      "from": "morgan@>=1.7.0 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/morgan/-/morgan-1.8.1.tgz"
+    },
+    "ms": {
+      "version": "0.7.2",
+      "from": "ms@0.7.2",
+      "resolved": "https://npm.goodeggs.com/ms/-/ms-0.7.2.tgz"
+    },
+    "negotiator": {
+      "version": "0.6.1",
+      "from": "negotiator@0.6.1",
+      "resolved": "https://npm.goodeggs.com/negotiator/-/negotiator-0.6.1.tgz"
+    },
+    "oauth-sign": {
+      "version": "0.8.2",
+      "from": "oauth-sign@>=0.8.1 <0.9.0",
+      "resolved": "https://npm.goodeggs.com/oauth-sign/-/oauth-sign-0.8.2.tgz"
+    },
+    "on-finished": {
+      "version": "2.3.0",
+      "from": "on-finished@>=2.3.0 <2.4.0",
+      "resolved": "https://npm.goodeggs.com/on-finished/-/on-finished-2.3.0.tgz"
+    },
+    "on-headers": {
+      "version": "1.0.1",
+      "from": "on-headers@>=1.0.1 <1.1.0",
+      "resolved": "https://npm.goodeggs.com/on-headers/-/on-headers-1.0.1.tgz"
+    },
+    "parseurl": {
+      "version": "1.3.1",
+      "from": "parseurl@>=1.3.1 <1.4.0",
+      "resolved": "https://npm.goodeggs.com/parseurl/-/parseurl-1.3.1.tgz"
+    },
+    "path-to-regexp": {
+      "version": "0.1.7",
+      "from": "path-to-regexp@0.1.7",
+      "resolved": "https://npm.goodeggs.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz"
+    },
+    "performance-now": {
+      "version": "0.2.0",
+      "from": "performance-now@>=0.2.0 <0.3.0",
+      "resolved": "https://npm.goodeggs.com/performance-now/-/performance-now-0.2.0.tgz"
+    },
+    "proxy-addr": {
+      "version": "1.1.4",
+      "from": "proxy-addr@>=1.1.3 <1.2.0",
+      "resolved": "https://npm.goodeggs.com/proxy-addr/-/proxy-addr-1.1.4.tgz"
+    },
+    "punycode": {
+      "version": "1.4.1",
+      "from": "punycode@>=1.4.1 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/punycode/-/punycode-1.4.1.tgz"
+    },
+    "qs": {
+      "version": "6.4.0",
+      "from": "qs@6.4.0",
+      "resolved": "https://npm.goodeggs.com/qs/-/qs-6.4.0.tgz"
+    },
+    "range-parser": {
+      "version": "1.2.0",
+      "from": "range-parser@>=1.2.0 <1.3.0",
+      "resolved": "https://npm.goodeggs.com/range-parser/-/range-parser-1.2.0.tgz"
+    },
+    "raw-body": {
+      "version": "2.2.0",
+      "from": "raw-body@>=2.2.0 <2.3.0",
+      "resolved": "https://npm.goodeggs.com/raw-body/-/raw-body-2.2.0.tgz"
+    },
+    "request": {
+      "version": "2.81.0",
+      "from": "request@latest",
+      "resolved": "https://npm.goodeggs.com/request/-/request-2.81.0.tgz"
+    },
+    "request-promise": {
+      "version": "4.2.0",
+      "from": "request-promise@latest",
+      "resolved": "https://npm.goodeggs.com/request-promise/-/request-promise-4.2.0.tgz"
+    },
+    "request-promise-core": {
+      "version": "1.1.1",
+      "from": "request-promise-core@1.1.1",
+      "resolved": "https://npm.goodeggs.com/request-promise-core/-/request-promise-core-1.1.1.tgz"
+    },
+    "safe-buffer": {
+      "version": "5.0.1",
+      "from": "safe-buffer@>=5.0.1 <6.0.0",
+      "resolved": "https://npm.goodeggs.com/safe-buffer/-/safe-buffer-5.0.1.tgz"
+    },
+    "send": {
+      "version": "0.15.1",
+      "from": "send@0.15.1",
+      "resolved": "https://npm.goodeggs.com/send/-/send-0.15.1.tgz"
+    },
+    "serve-static": {
+      "version": "1.12.1",
+      "from": "serve-static@1.12.1",
+      "resolved": "https://npm.goodeggs.com/serve-static/-/serve-static-1.12.1.tgz"
+    },
+    "setprototypeof": {
+      "version": "1.0.3",
+      "from": "setprototypeof@1.0.3",
+      "resolved": "https://npm.goodeggs.com/setprototypeof/-/setprototypeof-1.0.3.tgz"
+    },
+    "sntp": {
+      "version": "1.0.9",
+      "from": "sntp@>=1.0.0 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/sntp/-/sntp-1.0.9.tgz"
+    },
+    "sshpk": {
+      "version": "1.11.0",
+      "from": "sshpk@>=1.7.0 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/sshpk/-/sshpk-1.11.0.tgz",
+      "dependencies": {
+        "assert-plus": {
+          "version": "1.0.0",
+          "from": "assert-plus@>=1.0.0 <2.0.0",
+          "resolved": "https://npm.goodeggs.com/assert-plus/-/assert-plus-1.0.0.tgz"
+        }
+      }
+    },
+    "statuses": {
+      "version": "1.3.1",
+      "from": "statuses@>=1.3.1 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/statuses/-/statuses-1.3.1.tgz"
+    },
+    "stealthy-require": {
+      "version": "1.0.0",
+      "from": "stealthy-require@>=1.0.0 <2.0.0",
+      "resolved": "https://npm.goodeggs.com/stealthy-require/-/stealthy-require-1.0.0.tgz"
+    },
+    "stringstream": {
+      "version": "0.0.5",
+      "from": "stringstream@>=0.0.4 <0.1.0",
+      "resolved": "https://npm.goodeggs.com/stringstream/-/stringstream-0.0.5.tgz"
+    },
+    "tough-cookie": {
+      "version": "2.3.2",
+      "from": "tough-cookie@>=2.3.0 <2.4.0",
+      "resolved": "https://npm.goodeggs.com/tough-cookie/-/tough-cookie-2.3.2.tgz"
+    },
+    "tunnel-agent": {
+      "version": "0.6.0",
+      "from": "tunnel-agent@>=0.6.0 <0.7.0",
+      "resolved": "https://npm.goodeggs.com/tunnel-agent/-/tunnel-agent-0.6.0.tgz"
+    },
+    "tweetnacl": {
+      "version": "0.14.5",
+      "from": "tweetnacl@>=0.14.0 <0.15.0",
+      "resolved": "https://npm.goodeggs.com/tweetnacl/-/tweetnacl-0.14.5.tgz"
+    },
+    "type-is": {
+      "version": "1.6.15",
+      "from": "type-is@>=1.6.14 <1.7.0",
+      "resolved": "https://npm.goodeggs.com/type-is/-/type-is-1.6.15.tgz"
+    },
+    "unpipe": {
+      "version": "1.0.0",
+      "from": "unpipe@1.0.0",
+      "resolved": "https://npm.goodeggs.com/unpipe/-/unpipe-1.0.0.tgz"
+    },
+    "utils-merge": {
+      "version": "1.0.0",
+      "from": "utils-merge@1.0.0",
+      "resolved": "https://npm.goodeggs.com/utils-merge/-/utils-merge-1.0.0.tgz"
+    },
+    "uuid": {
+      "version": "3.0.1",
+      "from": "uuid@>=3.0.0 <4.0.0",
+      "resolved": "https://npm.goodeggs.com/uuid/-/uuid-3.0.1.tgz"
+    },
+    "vary": {
+      "version": "1.1.1",
+      "from": "vary@>=1.1.0 <1.2.0",
+      "resolved": "https://npm.goodeggs.com/vary/-/vary-1.1.1.tgz"
+    },
+    "verror": {
+      "version": "1.3.6",
+      "from": "verror@1.3.6",
+      "resolved": "https://npm.goodeggs.com/verror/-/verror-1.3.6.tgz"
+    }
+  }
+}
