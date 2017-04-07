@@ -20,10 +20,10 @@ app.post("/", function(req, res, next) {
 
     case "/helpscout":
       var newConvo = req.body.text.split(" ");
-      var mailbox = newConvo[0];
-      newConvo.pop(0);
       var customer = newConvo[0];
-      var subject = newConvo.pop(0).toString(",").replace(",", " ");
+      var mailbox = newConvo[1];
+      var removeItems = newConvo.splice(0, 2);
+      var subject = newConvo.toString(",").replace(/,/g, " ");
 
       if (mailbox === "it") {
         mailbox = 19176;
@@ -33,32 +33,27 @@ app.post("/", function(req, res, next) {
       var conversation = {
         "type": "email",
         "customer": {
-          "email": "andre@goodeggs.com",
-          "firstName": "Andre",
-          "lastName": "Customer",
+          "email": customer,
           "type": "customer"
         },
-        "subject": "Help!",
+        "subject": subject,
         "mailbox": {
           "id": mailbox
         },
         "tags": [
-          "slack"
+          "slack-ticket"
         ],
         "threads": [
           {
             "type": "customer",
             "createdBy": {
-              "email": "andre@goodeggs.com",
-              "firstName": "Andre",
-              "lastName": "Williams",
+              "email": customer,
               "type": "customer"
             },
             "body": subject
           }
         ]
       }
-      res.send("starting");
       request.post("https://api.helpscout.net/v1/conversations.json", {
         auth: {
           user: process.env.HELPSCOUT,
@@ -68,10 +63,10 @@ app.post("/", function(req, res, next) {
         json: true,
       })
       .then(function(response) {
-        response.status(200).send("Converstation created." + " " + res);
+        return response.json({Converstation: response});
       })
       .catch(function(err) {
-        response.send(err);
+        res.send(err);
       })
       break;
 
