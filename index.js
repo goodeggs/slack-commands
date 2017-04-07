@@ -35,7 +35,19 @@ app.post("/", function(req, res, next) {
             user: process.env.HELPSCOUT,
             password: "x"
           },
-          body: subject,
+          body: {
+            conversation: {
+              customer: customer,
+              subject: subject,
+              mailbox: mailbox,
+              thread: {
+                type: req.body.user_name,
+                createdBy: req.body.user_name,
+                body: subject
+              }
+            }
+          },
+          json: true,
         })
         .then(function(res) {
           res.status(200).send("Converstation created.")
@@ -46,12 +58,7 @@ app.post("/", function(req, res, next) {
       next();
   }
 });
- "/helpscout devops andre@goodeggs.com can't deploy it-accounts-api"
 
-app.post("/create_ticket", function(req, res, next) {
-
-
-})
 
 app.use(function(req, res, next) {
   res.status(404).send("command not found");
