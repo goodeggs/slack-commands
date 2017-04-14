@@ -27,9 +27,18 @@ app.post("/", function(req, res, next) {
 
       if (mailbox === "it") {
         mailbox = 19176;
-      } else {
+      } else if (mailbox === "devops") {
         mailbox = 98082;
       }
+      else if (mailbox === "ops-eng") {
+        mailbox = 23490;
+      }
+      else if (mailbox === "shopping") {
+        mailbox = 35872;
+      } else {
+        throw Error;
+      }
+
       var conversation = {
         "type": "email",
         "customer": {
@@ -41,7 +50,8 @@ app.post("/", function(req, res, next) {
           "id": mailbox
         },
         "tags": [
-          "slack-ticket"
+          "source-human",
+          "source-slack"
         ],
         "threads": [
           {
@@ -50,20 +60,22 @@ app.post("/", function(req, res, next) {
               "email": customer,
               "type": "customer"
             },
-            "body": subject
+            "body": "This ticket was created via slack."
           }
         ]
       }
+
       request.post("https://api.helpscout.net/v1/conversations.json", {
         auth: {
           user: process.env.HELPSCOUT,
-          password: "x"
+          password: process.env.HELPSCOUT_PASSWORD
         },
         body: conversation,
         json: true,
+        resolveWithFullResponse: true,
       })
       .then(function(response) {
-        return response.json({Converstation: response});
+        return res.send("Helpscout Ticket: " + response.headers.location);
       })
       .catch(function(err) {
         res.send(err);
