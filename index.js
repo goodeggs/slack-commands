@@ -75,7 +75,10 @@ app.post("/", function(req, res, next) {
         resolveWithFullResponse: true,
       })
       .then(function(response) {
-        return res.send("Helpscout Ticket: " + response.headers.location);
+        //do some stuff
+        var url = response.headers.location
+        ticket = url.split('/').pop().split('.').shift();
+        return res.send("Helpscout Ticket: " + "https://secure.helpscout.net/conversation/" + ticket);
       })
       .catch(function(err) {
         res.send(err);
