@@ -12,5 +12,9 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "morgan": "^1.7.0"
+  },
+  "engines": {
+    "node": "8.1.4",
+    "yarn": "0.26.4"
   }
 }
