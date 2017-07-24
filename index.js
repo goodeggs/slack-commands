@@ -23,7 +23,7 @@ app.post("/", function(req, res, next) {
       var customer = newConvo[0];
       var mailbox = newConvo[1];
       var removeItems = newConvo.splice(0, 2);
-      var subject = newConvo.toString(",").replace(/,/g, " ");
+      var subject = newConvo.join(" ")
 
       if (mailbox === "it") {
         mailbox = 19176;
