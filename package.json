@@ -14,5 +14,9 @@
     "morgan": "^1.7.0",
     "request": "^2.81.0",
     "request-promise": "^4.2.0"
+  },
+  "engines": {
+    "node": "8.1.4",
+    "yarn": "0.24.6"
   }
 }
